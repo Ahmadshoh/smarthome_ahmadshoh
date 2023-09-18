@@ -1,0 +1,16 @@
+{% extends 'web/layouts/base.html' %}
+
+{% block content %}
+
+      {% if user.is_authenticated %}
+        <h3>Hello {{ user.username }}</h3>
+        <ul>
+            {% for user in users %}
+                <li>{{ user.username }}</li>
+            {% endfor %}
+        </ul>
+      {% else %}
+          <!-- Content for anonymous users -->
+          <p>Please log in to access this content.</p>
+      {% endif %}
+{% endblock %}
